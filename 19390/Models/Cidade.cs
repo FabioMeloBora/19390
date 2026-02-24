@@ -48,7 +48,7 @@ namespace _19390.Models
                                                 "WHERE NOME LIKE @NOME " +
                                                 "ORDER BY NOME", Banco.conexao);
 
-                Banco.comando.Parameters.AddWithValue("@NOME", nome );
+                Banco.comando.Parameters.AddWithValue("@NOME", nome + "%" );
 
                 Banco.adaptador = new MySqlDataAdapter(Banco.comando);
                 Banco.datTabela = new DataTable();
@@ -89,6 +89,26 @@ namespace _19390.Models
             }
         }
 
+        public void Excluir()
+        {
+            try
+            {
+                //abre conexão com o banco de dados
+                Banco.AbrirConexao();
+                //alimenta o método comando com o comando sql com as instruções para excluir um registro
+                Banco.comando = new MySqlCommand("delete from cidades where id = @id", Banco.conexao);
+                //cria os parametros utilizados na instrução sql com seu respectivos cnteudo
+                Banco.comando.Parameters.AddWithValue("@id", id);
+                //executa o comando, no mysql, tem a função do raio do workbench
+                Banco.comando.ExecuteNonQuery();
+                //fecha conexão
+                Banco.FecharConexao();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+        }
 
     }//fim class
 

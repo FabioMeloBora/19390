@@ -24,15 +24,17 @@ namespace _19390
             Banco.CriarBanco(); //chama a classe Banco e o método CriarBanco ao carregar o formulário
         }
 
-        private void CidadeStripMenuItem5_Click(object sender, EventArgs e)
-        {
-            FrmCidades form = new FrmCidades();
-            form.Show();
-        }
+       
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmUsuarios form = new FrmUsuarios();
+            form.Show();
+        }
+
+        private void CidadeStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            FrmCidades form = new FrmCidades();
             form.Show();
         }
     }

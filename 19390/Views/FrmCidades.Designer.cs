@@ -32,13 +32,13 @@
             this.dgvCidades = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtUF = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.dgvCidades.RowHeadersWidth = 51;
             this.dgvCidades.Size = new System.Drawing.Size(769, 206);
             this.dgvCidades.TabIndex = 14;
+            this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick);
             // 
             // label4
             // 
@@ -93,6 +94,17 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(669, 22);
             this.txtPesquisa.TabIndex = 13;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Image = global::_19390.Properties.Resources._1_pesquisar;
+            this.btnPesquisar.Location = new System.Drawing.Point(687, 16);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(91, 66);
+            this.btnPesquisar.TabIndex = 11;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtUF
             // 
@@ -149,16 +161,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Código";
             // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Image = global::_19390.Properties.Resources._1_pesquisar;
-            this.btnPesquisar.Location = new System.Drawing.Point(687, 16);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(91, 66);
-            this.btnPesquisar.TabIndex = 11;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
             // btnFechar
             // 
             this.btnFechar.Image = global::_19390.Properties.Resources._1_fechar;
@@ -171,6 +173,7 @@
             this.btnFechar.Text = "Fechar";
             this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnExcluir
             // 
@@ -184,6 +187,7 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -197,6 +201,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAlterar
             // 
@@ -210,6 +215,7 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -223,6 +229,7 @@
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // FrmCidades
             // 
