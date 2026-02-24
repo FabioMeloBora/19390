@@ -67,6 +67,30 @@ namespace _19390.Models
             }
         }
 
+        public void Alterar()
+        {
+            try
+            {
+                Banco.conexao.Open();
+                Banco.comando = new MySqlCommand
+                    ("UPDATE cliente SET nome = @nome, idCidae = @idCidade, dataNasc = @dataNasc, " +
+                    "renda = @renda, cpf = @cpf, foto = @foto, venda = @venda where id = @id", Banco.conexao);
+                Banco.comando.Parameters.AddWithValue("@nome", nome);
+                Banco.comando.Parameters.AddWithValue("idCidade", idCidade);
+                Banco.comando.Parameters.AddWithValue("@dataNasc", dataNasc);
+                Banco.comando.Parameters.AddWithValue("@renda", renda);
+                Banco.comando.Parameters.AddWithValue("@cpf", cpf);
+                Banco.comando.Parameters.AddWithValue("@foto", foto);
+                Banco.comando.Parameters.AddWithValue("venda", venda);
+                Banco.comando.ExecuteNonQuery();
+                Banco.conexao.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
     }
 }
