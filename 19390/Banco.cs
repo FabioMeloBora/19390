@@ -19,6 +19,9 @@ namespace _19390
         public static MySqlDataAdapter adaptador; // variavel para adaptar os dados do banco para o DataTable
 
         public static DataTable datTabela; //  variavel para armazenar os dados em forma de tabela
+        internal static object conexão;
+
+        public static object Conexao { get; private set; }
 
         public static void AbrirConexao() //método para abrir a conexão com o banco de dados
         {
@@ -80,6 +83,23 @@ namespace _19390
                     "FUNCAO VARCHAR(50)) ", conexao);
                 comando.ExecuteNonQuery();
                 FecharConexao();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias " +
+                    "(id integer auto_increment primary key, " +
+                    "categoria char(20))", conexao);
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("Create TABLE IF NOT EXISTS Clientes " +
+                    "(id integer auto_increment primary key, " +
+                    "nome char(40), " +
+                    "idCidade integer, + " +
+                    "dataNasc date, " +
+                    "renda decimal(10,2), " +
+                    "cpf char(14), " +
+                    "foto varchar(100), " +
+                    "venda boolean)", conexao);
+
+                comando.ExecuteNonQuery();
             }
             catch(Exception ex)
             {
