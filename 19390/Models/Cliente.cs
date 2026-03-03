@@ -91,6 +91,21 @@ namespace _19390.Models
             }
         }
 
+        public void Excluir()
+        {
+            try
+            {
+                Banco.conexao.Open();
+                Banco.comando = new MySqlCommand("delete from cliente where id = @id", Banco.conexao);
+                Banco.comando.Parameters.AddWithValue("@id", id);
+                Banco.comando.ExecuteNonQuery();
+                Banco.conexao.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
     }
 }
