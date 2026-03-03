@@ -91,12 +91,14 @@
             // mskCPF
             // 
             this.mskCPF.Location = new System.Drawing.Point(27, 215);
+            this.mskCPF.Mask = "999.999.999-99";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(229, 22);
             this.mskCPF.TabIndex = 4;
             // 
             // dtpDataNasc
             // 
+            this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataNasc.Location = new System.Drawing.Point(289, 215);
             this.dtpDataNasc.Name = "dtpDataNasc";
             this.dtpDataNasc.Size = new System.Drawing.Size(207, 22);
@@ -328,6 +330,7 @@
             this.Name = "FrmClientes";
             this.Text = "Cadastros de Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
