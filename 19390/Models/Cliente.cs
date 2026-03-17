@@ -27,6 +27,7 @@ namespace _19390.Models
         {
             try
             {
+                Banco.AbrirConexao();
                 Banco.comando = new MySqlCommand("SELECT cl.*, ci.nome cidade, " +
                     "ci.uf FROM Clientes cl inner join Cidades ci on (ci.id = cl.idCidade) " +
                     "where cl.nome like ?Nome order by cl.nome", Banco.conexao);
@@ -35,6 +36,7 @@ namespace _19390.Models
                 Banco.datTabela = new DataTable();
                 Banco.adaptador.Fill(Banco.datTabela);
                 return Banco.datTabela;
+                Banco.FecharConexao();
             }
             catch(Exception e)
             {

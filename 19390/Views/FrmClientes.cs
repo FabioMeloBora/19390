@@ -18,6 +18,14 @@ namespace _19390.Views
         Cidade ci;
         Cliente cl;
 
+        void carregaGrid(string pesquisa)
+        {
+            cl = new Cliente()
+            {
+                nome = pesquisa
+            };
+            dgvClientes.DataSource = cl.Consultar();
+        }
         void LimpaControles()
         {
             txtId.Clear();
@@ -40,7 +48,30 @@ namespace _19390.Views
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
+            //cria um objeto de tipo cidade
+            //e alimenta o comboBox
 
+            ci = new Cidade();
+            cboCidades.DataSource = ci.Consultar();
+            cboCidades.DisplayMember = "nome";
+            cboCidades.ValueMember = "id";
+
+            LimpaControles();
+            carregaGrid("");
+
+            //deixa invisivel colunas do grid
+            dgvClientes.Columns["idCidade"].Visible = false;
+            dgvClientes.Columns["foto"].Visible = false;
+
+        }
+
+        private void cboCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCidades.SelectedIndex != -1)
+            {
+                DataRowView reg = (DataRowView)cboCidades.SelectedItem;
+                txtUF.Text = reg["uf"].ToString();
+            }
         }
     }
 }

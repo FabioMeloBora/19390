@@ -37,5 +37,11 @@ namespace _19390
             FrmCidades form = new FrmCidades();
             form.Show();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmClientes form = new FrmClientes();
+            form.Show();
+        }
     }
 }

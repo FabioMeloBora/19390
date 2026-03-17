@@ -82,17 +82,17 @@ namespace _19390
                     "SENHA VARCHAR(20), " +
                     "FUNCAO VARCHAR(50)) ", conexao);
                 comando.ExecuteNonQuery();
-                FecharConexao();
+             
 
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias " +
                     "(id integer auto_increment primary key, " +
                     "categoria char(20))", conexao);
                 comando.ExecuteNonQuery();
 
-                comando = new MySqlCommand("Create TABLE IF NOT EXISTS Clientes " +
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS CLIENTES " +
                     "(id integer auto_increment primary key, " +
                     "nome char(40), " +
-                    "idCidade integer, + " +
+                    "idCidade integer,  " +
                     "dataNasc date, " +
                     "renda decimal(10,2), " +
                     "cpf char(14), " +
@@ -100,6 +100,7 @@ namespace _19390
                     "venda boolean)", conexao);
 
                 comando.ExecuteNonQuery();
+                FecharConexao();
             }
             catch(Exception ex)
             {

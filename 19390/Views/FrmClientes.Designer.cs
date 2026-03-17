@@ -80,6 +80,7 @@
             this.cboCidades.Name = "cboCidades";
             this.cboCidades.Size = new System.Drawing.Size(392, 24);
             this.cboCidades.TabIndex = 2;
+            this.cboCidades.SelectedIndexChanged += new System.EventHandler(this.cboCidades_SelectedIndexChanged);
             // 
             // txtUF
             // 
@@ -195,9 +196,9 @@
             // 
             this.btnCancelar.Image = global::_19390.Properties.Resources._1_cancelar2;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(359, 263);
+            this.btnCancelar.Location = new System.Drawing.Point(353, 263);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(137, 56);
+            this.btnCancelar.Size = new System.Drawing.Size(143, 56);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
