@@ -55,7 +55,7 @@ namespace _19390
                 {
                 AbrirConexao(); //chama o método para abrir a conexão com o banco de dados
 
-                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS VENDAS_191125; USE VENDAS_191125", conexao); //cria o banco de dados VENDAS se ele não existir
+                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS VENDAS; USE VENDAS", conexao); //cria o banco de dados VENDAS se ele não existir
                 comando.ExecuteNonQuery();//executa o comando SQL
 
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS CIDADES " +

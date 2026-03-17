@@ -54,6 +54,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.chkVenda = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -117,8 +118,10 @@
             this.picFoto.Location = new System.Drawing.Point(576, 12);
             this.picFoto.Name = "picFoto";
             this.picFoto.Size = new System.Drawing.Size(246, 182);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 6;
             this.picFoto.TabStop = false;
+            this.picFoto.Click += new System.EventHandler(this.picFoto_Click);
             // 
             // groupBox1
             // 
@@ -179,6 +182,7 @@
             this.btnIncluir.Text = "INCLUIR";
             this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // btnAlterar
             // 
@@ -301,6 +305,10 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "UF:";
             // 
+            // ofdArquivo
+            // 
+            this.ofdArquivo.FileName = "openFileDialog1";
+            // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -369,5 +377,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkVenda;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.OpenFileDialog ofdArquivo;
     }
 }

@@ -73,5 +73,33 @@ namespace _19390.Views
                 txtUF.Text = reg["uf"].ToString();
             }
         }
+
+        private void picFoto_Click(object sender, EventArgs e)
+        {
+            ofdArquivo.InitialDirectory = "C:/fotos/clientes";
+            ofdArquivo.FileName = "";
+            ofdArquivo.ShowDialog();
+            picFoto.ImageLocation = ofdArquivo.FileName;
+        }
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            if (txtNome.Text == "") return;
+
+            cl = new Cliente()
+            {
+                nome = txtNome.Text,
+                idCidade = (int)cboCidades.SelectedValue,
+                dataNasc = dtpDataNasc.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                foto = picFoto.ImageLocation,
+                venda = chkVenda.Checked
+            };
+            cl.Incluir();
+
+            LimpaControles();
+            carregaGrid("");
+        }
     }
 }
