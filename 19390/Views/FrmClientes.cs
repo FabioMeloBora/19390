@@ -101,5 +101,22 @@ namespace _19390.Views
             LimpaControles();
             carregaGrid("");
         }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvClientes.RowCount > 0)
+            {
+                txtId.Text = dgvClientes.CurrentRow.Cells["id"].Value.ToString();
+                txtNome.Text = dgvClientes.CurrentRow.Cells["nome"].Value.ToString();
+                cboCidades.Text = dgvClientes.CurrentRow.Cells["Cidade"].Value.ToString();
+                txtUF.Text = dgvClientes.CurrentRow.Cells["UF"].ToString();
+                chkVenda.Checked = (bool)dgvClientes.CurrentRow.Cells["venda"].Value;
+                mskCPF.Text = dgvClientes.CurrentRow.Cells["cpf"].Value.ToString();
+                dtpDataNasc.Text = dgvClientes.CurrentRow.Cells["dataNasc"].Value.ToString();
+                txtRenda.Text = dgvClientes.CurrentRow.Cells["renda"].Value.ToString();
+                picFoto.ImageLocation = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
+
+            }
+        }
     }
 }

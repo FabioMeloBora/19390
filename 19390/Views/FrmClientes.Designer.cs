@@ -117,7 +117,7 @@
             // 
             this.picFoto.Location = new System.Drawing.Point(576, 12);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(246, 182);
+            this.picFoto.Size = new System.Drawing.Size(260, 182);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 6;
             this.picFoto.TabStop = false;
@@ -163,21 +163,26 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToOrderColumns = true;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(35, 87);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
             this.dgvClientes.Size = new System.Drawing.Size(738, 131);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // btnIncluir
             // 
             this.btnIncluir.Image = global::_19390.Properties.Resources._1_add;
             this.btnIncluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIncluir.Location = new System.Drawing.Point(27, 263);
+            this.btnIncluir.Location = new System.Drawing.Point(12, 263);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(129, 56);
+            this.btnIncluir.Size = new System.Drawing.Size(144, 56);
             this.btnIncluir.TabIndex = 9;
             this.btnIncluir.Text = "INCLUIR";
             this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -188,9 +193,9 @@
             // 
             this.btnAlterar.Image = global::_19390.Properties.Resources._1_atualizar2;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(192, 263);
+            this.btnAlterar.Location = new System.Drawing.Point(174, 263);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(127, 56);
+            this.btnAlterar.Size = new System.Drawing.Size(145, 56);
             this.btnAlterar.TabIndex = 10;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,9 +205,9 @@
             // 
             this.btnCancelar.Image = global::_19390.Properties.Resources._1_cancelar2;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(353, 263);
+            this.btnCancelar.Location = new System.Drawing.Point(340, 263);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(143, 56);
+            this.btnCancelar.Size = new System.Drawing.Size(156, 56);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -212,9 +217,9 @@
             // 
             this.btnExcluir.Image = global::_19390.Properties.Resources._1_excluir;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(529, 263);
+            this.btnExcluir.Location = new System.Drawing.Point(515, 263);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(125, 56);
+            this.btnExcluir.Size = new System.Drawing.Size(148, 56);
             this.btnExcluir.TabIndex = 12;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -224,9 +229,9 @@
             // 
             this.btnFechar.Image = global::_19390.Properties.Resources._1_fechar;
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(701, 263);
+            this.btnFechar.Location = new System.Drawing.Point(684, 263);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(121, 56);
+            this.btnFechar.Size = new System.Drawing.Size(138, 56);
             this.btnFechar.TabIndex = 13;
             this.btnFechar.Text = "FECHAR";
             this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
