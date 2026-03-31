@@ -35,8 +35,9 @@ namespace _19390.Models
                 Banco.adaptador = new MySqlDataAdapter(Banco.comando);
                 Banco.datTabela = new DataTable();
                 Banco.adaptador.Fill(Banco.datTabela);
-                return Banco.datTabela;
                 Banco.FecharConexao();
+
+                return Banco.datTabela;
             }
             catch(Exception e)
             {
@@ -75,7 +76,7 @@ namespace _19390.Models
             {
                 Banco.conexao.Open();
                 Banco.comando = new MySqlCommand
-                    ("UPDATE cliente SET nome = @nome, idCidae = @idCidade, dataNasc = @dataNasc, " +
+                    ("UPDATE clientes SET nome = @nome, idCidade = @idCidade, dataNasc = @dataNasc, " +
                     "renda = @renda, cpf = @cpf, foto = @foto, venda = @venda where id = @id", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@nome", nome);
                 Banco.comando.Parameters.AddWithValue("idCidade", idCidade);
@@ -84,6 +85,7 @@ namespace _19390.Models
                 Banco.comando.Parameters.AddWithValue("@cpf", cpf);
                 Banco.comando.Parameters.AddWithValue("@foto", foto);
                 Banco.comando.Parameters.AddWithValue("venda", venda);
+                Banco.comando.Parameters.AddWithValue("@id", id);
                 Banco.comando.ExecuteNonQuery();
                 Banco.conexao.Close();
             }

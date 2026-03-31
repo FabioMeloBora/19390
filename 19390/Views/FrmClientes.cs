@@ -118,5 +118,47 @@ namespace _19390.Views
 
             }
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if(txtId.Text =="") return;
+
+            cl = new Cliente()
+            {
+                id = int.Parse(txtId.Text),
+                nome = txtNome.Text,
+                idCidade = (int)cboCidades.SelectedValue,
+                dataNasc = dtpDataNasc.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                foto = picFoto.ImageLocation,
+                venda = chkVenda.Checked
+            };
+            cl.Alterar();
+
+            LimpaControles();
+            carregaGrid("");
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            carregaGrid(txtPesquisa.Text);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (Text == String.Empty) return;
+            if (MessageBox.Show("Deseja excluir a cliente?", "EXCLUSÃO",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cl = new Cliente()
+                {
+                    id = int.Parse(txtId.Text)
+                };
+                cl.Excluir();
+                LimpaControles();
+                carregaGrid("");
+            }
+        }
     }
 }

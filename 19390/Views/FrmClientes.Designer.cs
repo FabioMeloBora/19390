@@ -153,6 +153,7 @@
             this.btnConsultar.Size = new System.Drawing.Size(57, 54);
             this.btnConsultar.TabIndex = 2;
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // txtPesquisa
             // 
@@ -200,6 +201,7 @@
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCancelar
             // 
@@ -224,6 +226,7 @@
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnFechar
             // 
