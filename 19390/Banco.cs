@@ -108,9 +108,43 @@ namespace _19390
 
             }
 
+            try
+            {
+                AbrirConexao(); //chama o método para abrir a conexão com o banco de dados
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VENDAS_CAB " +
+                    "(id integer auto_increment primary key, " +
+                       "id_cliente integer, " +
+                       "data date, " +
+                       "total decimal(10,2))", conexao);
 
+                comando.ExecuteNonQuery();
+                FecharConexao();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao criar tabela vendas_CAB");
+            }
+
+            try
+            {
+                AbrirConexao(); //chama o método para abrir a conexão com o banco de dados
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VENDAS_DET " +
+                    "(id integer auto_increment primary key, " +
+                       "id_vendas integer, " +
+                       "id_produto integer," +
+                       "qtde decimal(10,3), " +
+                       "vlr_unit decimal(10,2))", conexao);
+
+                comando.ExecuteNonQuery();
+                FecharConexao();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao criar tabela vendas_DET");
+            }
         }
 
 
     }//class Banco
 }//namespace _19390
+ 

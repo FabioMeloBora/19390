@@ -115,7 +115,7 @@ namespace _19390.Views
                 dtpDataNasc.Text = dgvClientes.CurrentRow.Cells["dataNasc"].Value.ToString();
                 txtRenda.Text = dgvClientes.CurrentRow.Cells["renda"].Value.ToString();
                 picFoto.ImageLocation = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
-
+                //algumas fotos nao carregam do usuarios, outras usuarios carrega a foto
             }
         }
 
