@@ -100,6 +100,17 @@ namespace _19390
                     "venda boolean)", conexao);
 
                 comando.ExecuteNonQuery();
+
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produtos " +
+                    "(Id integer auto_increment primary key," +
+                    "descricao char(40), " +
+                    "idCategoria integer," +
+                    "idMarca integer," +
+                    "estoque decimal(10,3), " +
+                    "foto varchar(100))", conexao);
+                comando.ExecuteNonQuery();
+
                 FecharConexao();
             }
             catch(Exception ex)
@@ -142,6 +153,10 @@ namespace _19390
             {
                 MessageBox.Show(ex.Message, "Erro ao criar tabela vendas_DET");
             }
+
+
+
+
         }
 
 
