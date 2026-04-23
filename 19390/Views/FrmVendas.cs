@@ -25,6 +25,17 @@ namespace _19390.Views
             InitializeComponent();
         }
 
+        void LimpaProduto()
+        {
+            cboProdutos.SelectedIndex = -1;
+            txtEstoque.Clear();
+            txtPreco.Clear();
+            txtQuantidade.Clear();
+            //txtMarca.Clear();
+            //txtCategoria.Clear();
+            picProduto.ImageLocation = "";
+        }
+
         
     }
 }
