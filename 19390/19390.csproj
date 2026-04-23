@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="Models\Cidade.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\VendaCab.cs" />
     <Compile Include="Models\VendaDet.cs" />

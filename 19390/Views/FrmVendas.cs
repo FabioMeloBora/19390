@@ -53,5 +53,20 @@ namespace _19390.Views
             grbProdutos.Enabled = false;
                 LimpaProduto();
         }
+
+        private void FrmVendas_Load(object sender, EventArgs e)
+        {
+            c = new Cliente();
+            cboCliente.DataSource = c.Consultar();
+            cboCliente.DisplayMember = "nome";
+            cboCliente.ValueMember = "id";
+
+            p = new Produto();
+            cboProdutos.DataSource = p.Consultar();
+            cboProdutos.DisplayMember = "descricao";
+            cboProdutos.ValueMember = "id";
+
+            btnCancelar.PerformClick();
+        }
     }
 }

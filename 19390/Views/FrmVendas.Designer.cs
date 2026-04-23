@@ -461,6 +461,7 @@
             this.Controls.Add(this.grbClientes);
             this.Name = "FrmVendas";
             this.Text = "FORMULÁRIO DE VENDAS";
+            this.Load += new System.EventHandler(this.FrmVendas_Load);
             this.grbClientes.ResumeLayout(false);
             this.grbClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCliente)).EndInit();
