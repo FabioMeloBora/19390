@@ -36,6 +36,22 @@ namespace _19390.Views
             picProduto.ImageLocation = "";
         }
 
-        
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            dgvProdutos.RowCount = 0;
+            cboCliente.SelectedIndex = -1;
+            txtCidade.Clear();
+            txtUF.Clear();
+            txtRenda.Clear();
+            mskCPF.Clear();
+            mskDataNascimento.Clear();
+            chkVenda.Checked = false;
+            picCliente.ImageLocation = "";
+            total = 0;
+            lblTotal.Text = total.ToString("C");
+            grbClientes.Enabled = true;
+            grbProdutos.Enabled = false;
+                LimpaProduto();
+        }
     }
 }
