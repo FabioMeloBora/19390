@@ -16,7 +16,7 @@ namespace _19390.Views
         double total;
 
         Cliente c;
-        //Produto p;
+        Produto p;
         VendaCab vc;
         VendaDet vd;
    
@@ -31,8 +31,8 @@ namespace _19390.Views
             txtEstoque.Clear();
             txtPreco.Clear();
             txtQuantidade.Clear();
-            //txtMarca.Clear();
-            //txtCategoria.Clear();
+            txtMarca.Clear();
+            txtCategoria.Clear();
             picProduto.ImageLocation = "";
         }
 
