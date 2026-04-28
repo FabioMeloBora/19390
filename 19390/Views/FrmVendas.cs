@@ -68,5 +68,85 @@ namespace _19390.Views
 
             btnCancelar.PerformClick();
         }
+
+        private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCliente.SelectedIndex != -1)
+            {
+                DataRowView reg = (DataRowView)cboCliente.SelectedItem;
+                txtCidade.Text = reg["CIDADE"].ToString();
+                txtUF.Text = reg["UF"].ToString();
+                txtRenda.Text = reg["RENDA"].ToString();
+                mskCPF.Text = reg["CPF"].ToString();
+                mskDataNascimento.Text = reg["DATANASC"].ToString();
+                picCliente.ImageLocation = reg["FOTO"].ToString();
+                chkVenda.Checked = (bool)reg["VENDA"];
+            }
+        }
+
+        private void bntConfirmar_Click(object sender, EventArgs e)
+        {
+            if (cboCliente.SelectedIndex != -1)
+            {
+                if (chkVenda.Checked)
+                {
+                    MessageBox.Show("Cliente Bloqueado para Venda!", "Vendas",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    btnCancelar.PerformClick();
+                    return;
+                }
+                grbClientes.Enabled = false;
+                grbProdutos.Enabled = false;
+            }
+        }
+
+        private void cboProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboProdutos.SelectedIndex != -1)
+            {
+                DataRowView reg = (DataRowView)cboProdutos.SelectedItem;
+                txtEstoque.Text = reg["estoque"].ToString();
+                txtPreco.Text = reg["valorVenda"].ToString();
+                txtMarca.Text = reg["Marca"].ToString();
+                txtCategoria.Text = reg["Categoria"].ToString();
+                picProduto.ImageLocation = reg["foto"].ToString();
+            }
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            double quantidade = double.Parse(txtQuantidade.Text);
+            double estoque = double.Parse(txtEstoque.Text);
+
+            if(quantidade > estoque)
+            {
+                MessageBox.Show("Estoque insuficiente", "Vendas",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQuantidade.SelectAll();
+                return;
+            }
+            dgvProdutos.Rows.Add(cboProdutos.SelectedValue, cboProdutos.Text,
+                txtQuantidade.Text, txtPreco.Text);
+
+            double preco = double.Parse(txtPreco.Text);
+            total += quantidade * preco;
+            lblTotal.Text = total.ToString();
+            LimpaProduto();
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if(dgvProdutos.RowCount > 0)
+            {
+                double Quantidade = double.Parse(dgvProdutos.CurrentRow.Cells[2].Value.ToString());
+                double preco = double.Parse(dgvProdutos.CurrentRow.Cells[3].Value.ToString());
+
+                total -= Quantidade * preco;
+                lblTotal.Text = total.ToString("C");
+
+                dgvProdutos.Rows.RemoveAt(dgvProdutos.CurrentRow.Index);
+            }
+        }
     }
 }
+;
