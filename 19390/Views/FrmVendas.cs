@@ -96,7 +96,7 @@ namespace _19390.Views
                     return;
                 }
                 grbClientes.Enabled = false;
-                grbProdutos.Enabled = false;
+                grbProdutos.Enabled = true;
             }
         }
 

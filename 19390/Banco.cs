@@ -82,7 +82,12 @@ namespace _19390
                     "SENHA VARCHAR(20), " +
                     "FUNCAO VARCHAR(50)) ", conexao);
                 comando.ExecuteNonQuery();
-             
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Marcas " +
+                    "(id integer auto_increment primary key, " +
+                    "marca char(20))", conexao); 
+                comando.ExecuteNonQuery();
+
 
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias " +
                     "(id integer auto_increment primary key, " +
@@ -108,6 +113,7 @@ namespace _19390
                     "idCategoria integer," +
                     "idMarca integer," +
                     "estoque decimal(10,3), " +
+                    "valorvenda decimal(10,2), " +
                     "foto varchar(100))", conexao);
                 comando.ExecuteNonQuery();
 
