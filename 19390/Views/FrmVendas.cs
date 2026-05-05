@@ -39,7 +39,7 @@ namespace _19390.Views
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             dgvProdutos.RowCount = 0;
-            cboCliente.SelectedIndex = -1;
+            cboClientes.SelectedIndex = -1;
             txtCidade.Clear();
             txtUF.Clear();
             txtRenda.Clear();
@@ -57,9 +57,9 @@ namespace _19390.Views
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             c = new Cliente();
-            cboCliente.DataSource = c.Consultar();
-            cboCliente.DisplayMember = "nome";
-            cboCliente.ValueMember = "id";
+            cboClientes.DataSource = c.Consultar();
+            cboClientes.DisplayMember = "nome";
+            cboClientes.ValueMember = "id";
 
             p = new Produto();
             cboProdutos.DataSource = p.Consultar();
@@ -71,9 +71,9 @@ namespace _19390.Views
 
         private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboCliente.SelectedIndex != -1)
+            if (cboClientes.SelectedIndex != -1)
             {
-                DataRowView reg = (DataRowView)cboCliente.SelectedItem;
+                DataRowView reg = (DataRowView)cboClientes.SelectedItem;
                 txtCidade.Text = reg["CIDADE"].ToString();
                 txtUF.Text = reg["UF"].ToString();
                 txtRenda.Text = reg["RENDA"].ToString();
@@ -86,7 +86,7 @@ namespace _19390.Views
 
         private void bntConfirmar_Click(object sender, EventArgs e)
         {
-            if (cboCliente.SelectedIndex != -1)
+            if (cboClientes.SelectedIndex != -1)
             {
                 if (chkVenda.Checked)
                 {
@@ -146,6 +146,36 @@ namespace _19390.Views
 
                 dgvProdutos.Rows.RemoveAt(dgvProdutos.CurrentRow.Index);
             }
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            vc = new VendaCab()
+            {
+                idCliente = (int)cboClientes.SelectedValue,
+                data = DateTime.Now,
+                total = total
+            };
+            int idVenda = vc.Incluir();
+
+            foreach(DataGridViewRow linha in dgvProdutos.Rows)
+            {
+                vd = new VendaDet()
+                {
+                    idVendaCab = idVenda,
+                    idProduto = Convert.ToInt32(linha.Cells[0].Value),
+                    qtde = Convert.ToDouble(linha.Cells[2].Value),
+                    valorUnitario = Convert.ToDouble(linha.Cells[3].Value)
+                };
+                vd.Incluir();
+
+                p = new Produto()
+                {
+                    id = (int)linha.Cells[0].Value
+                };
+                p.atualizarEstoque(Convert.ToDouble(linha.Cells[2].Value));
+            }
+            btnCancelar.PerformClick();
         }
     }
 }

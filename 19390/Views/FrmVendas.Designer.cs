@@ -40,7 +40,7 @@
             this.txtUF = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.cboClientes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             this.grbClientes.Controls.Add(this.txtUF);
             this.grbClientes.Controls.Add(this.txtCidade);
             this.grbClientes.Controls.Add(this.txtEndereco);
-            this.grbClientes.Controls.Add(this.cboCliente);
+            this.grbClientes.Controls.Add(this.cboClientes);
             this.grbClientes.Controls.Add(this.label4);
             this.grbClientes.Controls.Add(this.label3);
             this.grbClientes.Controls.Add(this.label2);
@@ -189,14 +189,14 @@
             this.txtEndereco.Size = new System.Drawing.Size(526, 22);
             this.txtEndereco.TabIndex = 5;
             // 
-            // cboCliente
+            // cboClientes
             // 
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(92, 24);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(526, 24);
-            this.cboCliente.TabIndex = 4;
-            this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
+            this.cboClientes.FormattingEnabled = true;
+            this.cboClientes.Location = new System.Drawing.Point(92, 24);
+            this.cboClientes.Name = "cboClientes";
+            this.cboClientes.Size = new System.Drawing.Size(526, 24);
+            this.cboClientes.TabIndex = 4;
+            this.cboClientes.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -409,6 +409,7 @@
             this.btnGravar.TabIndex = 3;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // btnCancelar
             // 
@@ -487,7 +488,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.ComboBox cboCliente;
+        private System.Windows.Forms.ComboBox cboClientes;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.MaskedTextBox txtRenda;
         private System.Windows.Forms.Label label6;
