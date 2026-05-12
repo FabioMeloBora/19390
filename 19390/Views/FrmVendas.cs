@@ -56,6 +56,7 @@ namespace _19390.Views
 
         private void FrmVendas_Load(object sender, EventArgs e)
         {
+
             c = new Cliente();
             cboClientes.DataSource = c.Consultar();
             cboClientes.DisplayMember = "nome";
@@ -67,6 +68,17 @@ namespace _19390.Views
             cboProdutos.ValueMember = "id";
 
             btnCancelar.PerformClick();
+
+            // Limpa colunas existentes por segurança
+            dgvProdutos.Columns.Clear();
+
+            // Adiciona as colunas (Nome Interno, Título que aparece no topo)
+            //dgvProdutos.Columns.Add("id", "ID");
+            dgvProdutos.Columns.Add("produto", "Marca");
+            dgvProdutos.Columns.Add("idMarca", "Marca");
+            dgvProdutos.Columns.Add("qtd", "Quantidade");
+            dgvProdutos.Columns.Add("preco", "Preço");
+
         }
 
         private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)

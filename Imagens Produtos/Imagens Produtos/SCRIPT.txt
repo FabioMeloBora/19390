@@ -1,0 +1,3 @@
+cmd /c ""%ProgramFiles%\WinRAR\winrar.exe" X "C:\Users\Usuario\hoje.rar" *.* "C:\Users\Usuario\Desktop\"
+
+cmd /c "move "C:\Users\Usuario\Desktop\HOJE\Imagens Produtos" "C:\Imagens Produtos""
