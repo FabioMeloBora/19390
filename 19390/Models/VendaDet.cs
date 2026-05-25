@@ -23,12 +23,12 @@ namespace _19390.Models
             {
                 Banco.conexao.Open();
                 Banco.comando = new MySqlCommand(
-                "INSERT INTO vendaDet (idVendaCab, idProduto, qtde, valorUnitario)" +
-                "VALUES (@idVendaCab, @idProduto, @qtde, @valorUnitario)", Banco.conexao);
+                "INSERT INTO VENDAS_DET (idVendaCab, id_produto, qtde, vlr_unit) " +
+                "VALUES (@idVendaCab, @id_produto, @qtde, @vlr_unit)", Banco.conexao);
                 Banco.comando.Parameters.AddWithValue("@idVendaCab", idVendaCab);
-                Banco.comando.Parameters.AddWithValue("@idProduto", idProduto);
+                Banco.comando.Parameters.AddWithValue("@id_produto", idProduto);
                 Banco.comando.Parameters.AddWithValue("@qtde", qtde);
-                Banco.comando.Parameters.AddWithValue("@valorUnitario", valorUnitario);
+                Banco.comando.Parameters.AddWithValue("@vlr_unit", valorUnitario);
                 Banco.comando.ExecuteNonQuery();
                     Banco.conexao.Close();
             }

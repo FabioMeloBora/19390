@@ -21,9 +21,9 @@ namespace _19390.Models
             {
                 Banco.conexao.Open();
                 Banco.comando = new MySqlCommand(
-                    "INSERT INTO vendaCab (idCliente, data, total)" +
-                    "VALUES (@idCLiente, @data, @total)", Banco.conexao);
-                Banco.comando.Parameters.AddWithValue("@idCliente", idCliente);
+                    "INSERT INTO VENDAS_CAB (id_cliente, data, total)" +
+                    "VALUES (@id_cliente, @data, @total)", Banco.conexao);
+                Banco.comando.Parameters.AddWithValue("@id_cliente", idCliente);
                 Banco.comando.Parameters.AddWithValue("@data", data);
                 Banco.comando.Parameters.AddWithValue("@total", total);
                 Banco.comando.ExecuteNonQuery();

@@ -74,7 +74,7 @@ namespace _19390.Views
 
             // Adiciona as colunas (Nome Interno, Título que aparece no topo)
             //dgvProdutos.Columns.Add("id", "ID");
-            dgvProdutos.Columns.Add("produto", "Marca");
+            dgvProdutos.Columns.Add("produto", "Codigo");
             dgvProdutos.Columns.Add("idMarca", "Marca");
             dgvProdutos.Columns.Add("qtd", "Quantidade");
             dgvProdutos.Columns.Add("preco", "Preço");
@@ -189,6 +189,7 @@ namespace _19390.Views
             }
             btnCancelar.PerformClick();
         }
+
     }
 }
 ;

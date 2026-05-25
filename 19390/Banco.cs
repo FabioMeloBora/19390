@@ -147,7 +147,7 @@ namespace _19390
                 AbrirConexao(); //chama o método para abrir a conexão com o banco de dados
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS VENDAS_DET " +
                     "(id integer auto_increment primary key, " +
-                       "id_vendas integer, " +
+                       "idVendaCAB integer, " +
                        "id_produto integer," +
                        "qtde decimal(10,3), " +
                        "vlr_unit decimal(10,2))", conexao);

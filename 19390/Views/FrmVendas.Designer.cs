@@ -165,6 +165,7 @@
             this.picCliente.Location = new System.Drawing.Point(643, 18);
             this.picCliente.Name = "picCliente";
             this.picCliente.Size = new System.Drawing.Size(115, 150);
+            this.picCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCliente.TabIndex = 8;
             this.picCliente.TabStop = false;
             // 
@@ -295,6 +296,7 @@
             this.picProduto.Location = new System.Drawing.Point(635, 21);
             this.picProduto.Name = "picProduto";
             this.picProduto.Size = new System.Drawing.Size(120, 115);
+            this.picProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProduto.TabIndex = 10;
             this.picProduto.TabStop = false;
             // 
