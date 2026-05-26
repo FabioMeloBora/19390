@@ -190,6 +190,10 @@ namespace _19390.Views
             btnCancelar.PerformClick();
         }
 
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
 ;

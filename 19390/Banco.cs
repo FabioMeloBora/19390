@@ -151,6 +151,16 @@ namespace _19390
                        "id_produto integer," +
                        "qtde decimal(10,3), " +
                        "vlr_unit decimal(10,2))", conexao);
+                comando.ExecuteNonQuery();
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Contas_Receber " +
+                    "(id integer auto_increment primary key, " +
+                    " idVenda int," +
+                    " parcela tinyint," +
+                    " data_vencto date," +
+                    " data_pagto date," +
+                    " vlr_parcela double (10,2)," +
+                    " status boolean)", conexao);
 
                 comando.ExecuteNonQuery();
                 FecharConexao();
