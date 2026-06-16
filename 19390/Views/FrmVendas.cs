@@ -162,6 +162,7 @@ namespace _19390.Views
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+
             vc = new VendaCab()
             {
                 idCliente = (int)cboClientes.SelectedValue,
@@ -187,6 +188,12 @@ namespace _19390.Views
                 };
                 p.atualizarEstoque(Convert.ToDouble(linha.Cells[2].Value));
             }
+
+            FrmNegociacaoVenda frm = new FrmNegociacaoVenda(idVenda, 
+                (int)cboClientes.SelectedValue, total, cboClientes.Text);
+
+            frm.ShowDialog();
+
             btnCancelar.PerformClick();
         }
 
