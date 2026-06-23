@@ -120,7 +120,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(118, 381);
+            this.textBox10.Location = new System.Drawing.Point(118, 386);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(233, 22);
             this.textBox10.TabIndex = 9;
@@ -128,9 +128,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 384);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 392);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 16);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "TROCO:";
             // 
@@ -165,7 +166,7 @@
             // 
             this.btnCaixa.Image = global::_19390.Properties.Resources.pngwing;
             this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCaixa.Location = new System.Drawing.Point(401, 358);
+            this.btnCaixa.Location = new System.Drawing.Point(401, 362);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(221, 78);
             this.btnCaixa.TabIndex = 10;

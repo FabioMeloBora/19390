@@ -17,8 +17,7 @@ namespace _19390.Models
             public double qtde { get; set; }
             public double valorUnitario { get; set; }  
         
-            public void Incluir()
-        {
+            public void Incluir() {
             try
             {
                 Banco.conexao.Open();
